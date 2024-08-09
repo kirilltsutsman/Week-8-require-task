@@ -1,0 +1,136 @@
+:root{
+    --my-padding:0.4rem;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    color: white;
+    height: 100vh;
+    display: grid;
+    gap: 0px;
+    grid-template-columns: 1fr 1fr 1fr 0.5fr;
+    grid-template-rows: 1fr 1fr 1fr 0.5fr;
+    grid-template-areas:
+     "nav nav nav nav"
+     "hero image extra menu"
+     "main main main menu"
+     "banner banner banner menu"  
+    ;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+nav{
+    background-color: rgb(2, 2, 2);
+    grid-area: nav ;
+    padding: var(--my-padding);
+}
+.nav-container{
+    align-items: center;
+    display: grid;
+    height: 100%;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.hero{
+    align-items: center;
+    background-color: rgb(49, 81, 99);
+    display: grid;
+    grid-area: hero;
+    padding: var(--my-padding);
+}
+
+.image{
+    align-items: center;
+    background-color: rgb(184, 154, 184);
+    display: grid;
+    grid-area: image;
+    padding: var(--my-padding);
+}
+
+.extra{
+    align-items: center;
+    display: grid;
+    background-color: rgb(44, 124, 84);
+    grid-area: extra;
+    padding: var(--my-padding);
+}
+
+.menu{
+    align-items: center;
+    background-color: rgb(228, 16, 48);
+    display: grid;
+    grid-area: menu;
+    padding: var(--my-padding);
+}
+
+main{
+    align-items: center;
+    background-color: rgb(118, 17, 35);
+    display: grid;
+    grid-area: main;
+    padding: var(--my-padding);
+}
+footer{
+    background-color: rgb(243, 150, 21);
+    grid-area: banner;
+    padding: var(--my-padding);
+
+}
+@media (max-width: 1024px) {
+    
+   .nav-container{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+   }
+    .container{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 0.2fr;
+        grid-template-areas:
+        "header header menu"
+        "extra image"
+        "hero hero"
+        "banner banner"
+        ;
+    }
+    .sidebar{
+        display: none;
+
+    }
+}
+@media (max-width: 768px) {
+    .nav-container{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4,1fr);
+    }
+
+    .sidebar{
+        display: grid;
+        align-items: center;
+        display: block;
+    }
+    .content3{
+        display: none;
+    }
+    .container{
+        gap: 0;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.3fr 0.5fr 1.3fr 1.7fr 1fr 1fr 1fr;
+        grid-template-areas:
+        "nav"
+        "menu"
+        "hero"
+        "main"
+        "banner"
+        "extra"
+        "image"
+        ;
+    }
+}
+
+
